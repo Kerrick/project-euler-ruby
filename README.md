@@ -10,6 +10,6 @@ If you'd like to add me as a friend on Project Euler, simply visit [projecteuler
 
 ## My Progress
 
-`[>                                     ]` Solved 1 out of 382
+    [>                                     ]
 
-[View more (and fresher) details on Project Euler](http://projecteuler.net/progress=Kerrick)
+[View progress details on Project Euler](http://projecteuler.net/progress=Kerrick)
