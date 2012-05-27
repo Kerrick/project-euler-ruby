@@ -8,7 +8,7 @@
 def is_multiple?(num, divisors)
   answer = false
   divisors.each do | i |
-    if (num.modulo(i) == 0)
+    if (num % i == 0)
       answer = true
     end
   end
