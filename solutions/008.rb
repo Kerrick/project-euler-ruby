@@ -45,13 +45,11 @@ num_str = <<-EOS
 05886116467109405077541002256983155200055935729725
 71636269561882670428252483600823257530420752963450
 EOS
-num_arr = num_str.split("\n").join.split('')
+num_arr = num_str.split("\n").join.split('').map {|n| n.to_i}
 
 largest_product = 0
 num_arr.each_cons(5) do |i|
-  this_product = i.reduce(1) {|sum, j| sum *= j.to_i}
-  largest_product = this_product if this_product > largest_product
+  largest_product = i.reduce(:*) if i.reduce(:*) > largest_product
 end
-
 
 puts "Answer: #{largest_product}"
