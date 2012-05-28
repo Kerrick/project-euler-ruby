@@ -6,23 +6,27 @@
 
 require 'prime'
 
-def find_factors(num)
-  arr = []
-  Math.sqrt(num).ceil.times do |n|
-    if num % (n + 1) == 0
-      arr << n + 1
-      arr << num / (n + 1)
+def find_prime_factors(num)
+  arr = [1]
+  if num.prime? # Already prime. Don't bother.
+    arr = [num]
+  else
+    n = 2
+    until arr.flatten.reduce(:*) == num
+      if num % n == 0 # Factor.
+        if n.prime? # Prime factor.
+          arr << n
+        end
+        if (num / n).prime? # Its pair is a prime.
+          arr << num / n
+        else # Its pair is not a prime. Recurse.
+          arr << find_prime_factors(num / n)
+        end
+      end
+      n += 1
     end
   end
-  arr
+  arr.flatten.delete_if {|i| i == 1} # 1 isn't prime, but it made this function easier.
 end
 
-def find_largest_prime(arr)
-  primes = []
-  arr.each do |i|
-    primes << i if i.prime?
-  end
-  primes.max
-end
-
-puts "Answer: #{find_largest_prime(find_factors(600851475143))}"
+puts "Answer: #{find_prime_factors(600851475143).max}"
