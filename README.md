@@ -10,6 +10,6 @@ If you'd like to add me as a friend on Project Euler, simply visit [projecteuler
 
 ## My Progress
 
-    [>                                     ]
+    [=>                                       ]
 
 [View progress details on Project Euler](http://projecteuler.net/progress=Kerrick)
